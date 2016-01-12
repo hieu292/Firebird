@@ -2,7 +2,7 @@ var promise = require('bluebird');
 var fs = require('fs');
 var request = require('request');
 var needle = require('needle');
-
+var tcpping = require('tcp-ping');
 
 //Task 1
 
@@ -190,7 +190,28 @@ promise.map(photoLink, function (items) {
 }).catch(function (err) {
     console.error('Error: ', err);
 });
+
 //#Task 7:
+
+function ping(url){
+    return new promise(function (fullfill, reject){
+        tcpping.ping({address:url}, function (err, data) {
+            if(err){
+                reject(err);
+            }else{
+                fullfill(data);
+            }
+        });
+    });
+}
+promise.some([
+    ping('bbc.co.uk'),
+    ping('dantri.com.vn'),
+    ping('google.com')
+],2).spread(function(data1, data2){
+    console.log(data1);
+    console.log(data2);
+});
 
 
 

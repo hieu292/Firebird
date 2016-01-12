@@ -27,7 +27,11 @@ Source Code: index.js
 note: all chỉ nhận vào một mảng promise, còn map thì nhận vào một mảng bất kỳ, concurrency thì giới hạn tối đa bao nhiêu promise được hoàn thành (fullfill) cùng một thời điểm.
 ** Task 6: lấy ảnh sử dụng map, concurrency.
 
+# some
+note: some khởi đầu với nhiều promise  sau đó some sẽ đếm các fullfill promises trả về (promises hoàn thành), sau đó some trả về các promises theo thứ tự hoàn thành sớm nhất
+** Task 7: sử dụng tcp-ping trả về 2 fullfill promises hoàn thành sớm nhất
 
+# 
 
 
 
