@@ -179,7 +179,10 @@ function getPhoto(photoLink){
 }
 console.time('getphoto');
 promise.map(photoLink, function (items) {
-    return getPhoto(items);
+    return getPhoto(items).then(function (res) {
+        console.log(new Date().toLocaleTimeString().replace(/T/, ' ').replace(/\..+/, '')+' '+res);
+        return res;
+    });
 }, {concurrency: 6}).then(function (res) {
     console.log(res);
     console.timeEnd('getphoto');
@@ -187,7 +190,6 @@ promise.map(photoLink, function (items) {
 }).catch(function (err) {
     console.error('Error: ', err);
 });
-
 //#Task 7:
 
 
