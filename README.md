@@ -23,6 +23,12 @@ Source Code: index.js
 # spread
 ** Task 5: Trả về nhiều hơn promises (mảng promises)
 
+# map, concurrency
+note: all chỉ nhận vào một mảng promise, còn map thì nhận vào một mảng bất kỳ, concurrency thì giới hạn tối đa bao nhiêu promise được hoàn thành (fullfill) cùng một thời điểm.
+** Task 6: lấy ảnh sử dụng map, concurrency.
+
+
+
 
 
 
