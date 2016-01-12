@@ -213,5 +213,45 @@ promise.some([
     console.log(data2);
 });
 
+//#Task 8:
+
+var doTask = function (task) {
+    return new promise(function (fullfill, reject) {
+        setTimeout(function () {
+            fullfill(task);
+        }, 2000);
+    });
+};
+
+var taskList = ['Task A', 'Task B', 'Task C'];
+
+function show(name){
+    console.log(new Date().toLocaleTimeString()+' ' + name);
+}
+
+
+console.log("Promise Map Demo");
+show('Start');
+promise.map(taskList, function (task) {
+    return doTask(task).then(function (res) {
+        show(res);
+    }).catch(function (err) {
+        console.log('Error: '+ err);
+    });
+});
+
+console.log("Promise Each Demo");
+show('Start');
+promise.each(taskList, function (task) {
+    return doTask(task).then(function (result) {
+        show(result);
+    }).catch(function (err) {
+        console.log('Error: '+ err);
+    });
+});
+
+
+
+
 
 

@@ -31,7 +31,19 @@ note: all chỉ nhận vào một mảng promise, còn map thì nhận vào mộ
 note: some khởi đầu với nhiều promise  sau đó some sẽ đếm các fullfill promises trả về (promises hoàn thành), sau đó some trả về các promises theo thứ tự hoàn thành sớm nhất
 ** Task 7: sử dụng tcp-ping trả về 2 fullfill promises hoàn thành sớm nhất
 
-# 
+
+Note:
+* some  về n fullfill promises sớm nhất.
+* any trả về một promises thành công sớm nhất.
+* race trả về một promises sớm nhất mà không quan tâm tới thành công hay thất bại.
+
+# each, map
+Note: 
+* map chạy đồng thời các promises.
+* each chạy tuần tự các promises.
+**Task 8: Demo map and each 
+
+
 
 
 
